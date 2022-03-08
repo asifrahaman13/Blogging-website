@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 from django.contrib import messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'django.contrib.humanize',
+    # 'django.contrib.extras'
 ]
 
 MIDDLEWARE = [
@@ -121,6 +124,11 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,  "static"),
+]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
