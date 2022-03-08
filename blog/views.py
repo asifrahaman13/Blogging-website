@@ -24,5 +24,4 @@ def postComment(request):
         comment=BlogComment(comment= comment, user=user, post=post)
         comment.save()
         messages.success(request, "Your comment has been posted successfully")
-        print(comment)
     return redirect(f"/blog/{post.slug}")
